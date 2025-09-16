@@ -1,0 +1,16 @@
+# Terraform files
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+
+# Node.js dependencies
+app/node_modules/
+
+# Downloaded tools
+awscliv2.zip
+aws/
+
+# System files
+.DS_Store
+iac/.terraform/providers/registry.terraform.io/hashicorp/aws/6.13.0/linux_amd64/terraform-provider-aws_v6.13.0_x5

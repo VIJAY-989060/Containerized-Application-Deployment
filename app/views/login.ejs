@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 50px; }
+    .login-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+    .form-group { margin-bottom: 15px; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Demo App Login</h2>
+    <form action="/login" method="POST">
+      <% if (error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+      <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required value="hire-me@anshumat.org">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required value="HireMe@2025!">
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>
