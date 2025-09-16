@@ -1,0 +1,28 @@
+name: Test AWS Authentication
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test Credentials
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE_ARN }}
+          aws-region: ap-south-1
+
+      - name: Check Identity
+        run: |
+          aws sts get-caller-identity
